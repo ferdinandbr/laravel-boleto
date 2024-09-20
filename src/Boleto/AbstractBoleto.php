@@ -2215,4 +2215,14 @@ abstract class AbstractBoleto implements BoletoContract
             'pix_qrcode_image'                   => $this->getPixQrCodeBase64(),
         ], $this->variaveis_adicionais);
     }
+
+    public function setLinhaDigitavel($linhaDigitavel)
+    {
+        $this->campoLinhaDigitavel = $linhaDigitavel;
+    }
+
+    public function setCodigoBarras($codigoBarras)
+    {
+        $this->campoCodigoBarras = $codigoBarras;
+    }
 }
