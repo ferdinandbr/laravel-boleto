@@ -88,13 +88,7 @@ class Itau extends AbstractBoleto implements BoletoContract
      */
     protected function gerarNossoNumero()
     {
-        $numero_boleto = Util::numberFormatGeral($this->getNumero(), 8);
-        $carteira = Util::numberFormatGeral($this->getCarteira(), 3);
-        $agencia = Util::numberFormatGeral($this->getAgencia(), 4);
-        $conta = Util::numberFormatGeral($this->getConta(), 5);
-        $dv = CalculoDV::itauNossoNumero($agencia, $conta, $carteira, $numero_boleto);
-
-        return $numero_boleto . $dv;
+        return Util::numberFormatGeral($this->getNumero(), 8);
     }
 
     /**
@@ -104,7 +98,7 @@ class Itau extends AbstractBoleto implements BoletoContract
      */
     public function getNossoNumeroBoleto()
     {
-        return $this->getCarteira() . '/' . substr_replace($this->getNossoNumero(), '-', -1, 0);
+        return $this->getNossoNumero();
     }
 
     /**
