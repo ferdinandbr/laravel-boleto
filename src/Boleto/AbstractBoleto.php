@@ -2218,7 +2218,7 @@ abstract class AbstractBoleto implements BoletoContract
 
     public function setLinhaDigitavel($linhaDigitavel)
     {
-        $this->campoLinhaDigitavel = $linhaDigitavel;
+        $this->campoLinhaDigitavel = Util::formatLinhaDigitavel($linhaDigitavel);
     }
 
     public function setCodigoBarras($codigoBarras)
